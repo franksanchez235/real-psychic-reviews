@@ -1,0 +1,5 @@
+document.addEventListener('DOMContentLoaded',function(){
+var t=document.querySelector('.hdr__toggle'),n=document.querySelector('.hdr__nav');
+if(t&&n){t.addEventListener('click',function(){var o=n.classList.toggle('active');t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Close menu':'Open menu');t.querySelector('.hdr__toggle-open').style.display=o?'none':'block';t.querySelector('.hdr__toggle-close').style.display=o?'block':'none'});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('active');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');t.querySelector('.hdr__toggle-open').style.display='block';t.querySelector('.hdr__toggle-close').style.display='none'})})}
+document.querySelectorAll('.faq-row__q').forEach(function(b){b.addEventListener('click',function(){var r=b.closest('.faq-row'),w=r.classList.contains('open');document.querySelectorAll('.faq-row').forEach(function(x){x.classList.remove('open');x.querySelector('.faq-row__q').setAttribute('aria-expanded','false')});if(!w){r.classList.add('open');b.setAttribute('aria-expanded','true')}})});
+});
